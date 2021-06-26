@@ -28,7 +28,7 @@ block content
                  input(type="checkbox", name="#{task.id}", value="#{!task.completed}", checked=task.completed)
                 else
                  input(type="checkbox", name="#{task.id}", value="#{!task.completed}", checked=task.completed)
-       button.btn.btn-primary(type="submit") Update tasks
+       button.btn.btn-primary(type="submit") Update tickets
      hr
      form.well(action="/addtask", method="post")
        label Item Name:
