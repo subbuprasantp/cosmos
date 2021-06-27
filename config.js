@@ -1,8 +1,8 @@
 const config = {};
 
-config.host = process.env.HOST || "https://languye-sql-nb3.documents.azure.com:443/";
+config.host = process.env.HOST || "https://cosmosdbone.documents.azure.com:443/";
 config.authKey =
-  process.env.AUTH_KEY || "G1Wlxck6MhT6w2LNjKmEObPVWLBbcdAio01Fyh1EYfcJPWt0fszjnuTxLIA8Kyd5T6EhAXYCllkWq8za0TaxHg==";
+  process.env.AUTH_KEY || "LlFI1g53s94LXmLgWjKJHKdQOwzi1yhIu5gORF6csVKDhdVNPPp218sdw1mAVSXNbgKvZaZhkUTovmdwDw8AbQ==";
 config.databaseId = "ToDoList";
 config.containerId = "Items";
 

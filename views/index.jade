@@ -7,7 +7,10 @@ block content
       table.table.table-striped.table-bordered
          tr
            td Name
-           td Category
+           td Message
+           td errorCode
+           td url
+           td application
            td Date
            td Complete
          if (typeof tasks === "undefined")
@@ -17,7 +20,10 @@ block content
            each task in tasks
              tr
                td #{task.name}
-               td #{task.category}
+               td #{task.message}
+               td #{task.errorCode}
+               td #{task.url}
+               td #{task.application}
                - var date  = new Date(task.date);
                - var day   = date.getDate();
                - var month = date.getMonth() + 1;
@@ -31,9 +37,18 @@ block content
        button.btn.btn-primary(type="submit") Update tickets
      hr
      form.well(action="/addtask", method="post")
+
+      table.table.table-striped.table-bordered
        label Item Name:
        input(name="name", type="textbox")
-       label Item Category:
-       input(name="category", type="textbox")
+       label Item Message:
+       input(name="message", type="textbox")
+       label Item Error Code:
+       input(name="errorCode", type="textbox")
+       label Item URL:
+       input(name="url", type="textbox")
+       label Item Application:
+       input(name="application", type="textbox")
+       br
        br
        button.btn(type="submit") Add item
