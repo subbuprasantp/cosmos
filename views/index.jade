@@ -7,6 +7,7 @@ block content
       table.table.table-striped.table-bordered
          tr
            td Name
+           td Email
            td Message
            td errorCode
            td url
@@ -20,6 +21,7 @@ block content
            each task in tasks
              tr
                td #{task.name}
+               td #{task.email}
                td #{task.message}
                td #{task.errorCode}
                td #{task.url}
@@ -39,6 +41,8 @@ block content
      form.well(action="/addtask", method="post")
        label User Name:
        input(name="name", type="textbox")
+       label User Email:
+       input(name="email", type="textbox")
        label Message:
        input(name="message", type="textbox")
        label Error Code:
