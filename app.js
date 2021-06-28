@@ -12,30 +12,30 @@ const CosmosClient = require('@azure/cosmos').CosmosClient
 
  const app = express()
 
- var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'optumapi@gmail.com',
-    pass: 'Optum123'
-  }
-});
+//  var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'optumapi@gmail.com',
+//     pass: 'Optum123'
+//   }
+// });
 
 ///////////
 
-var mailOptions = {
-  from: 'mike793@gmail.com',
-  to: 'mike.liadov@optum.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
+// var mailOptions = {
+//   from: 'mike793@gmail.com',
+//   to: 'mike.liadov@optum.com',
+//   subject: 'Sending Email using Node.js',
+//   text: 'That was easy!'
+// };
 
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
 
 
  // view engine setup
