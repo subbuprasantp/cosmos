@@ -8,8 +8,35 @@ const CosmosClient = require('@azure/cosmos').CosmosClient
  const logger = require('morgan')
  const cookieParser = require('cookie-parser')
  const bodyParser = require('body-parser')
+ const nodemailer = require('nodemailer');
 
  const app = express()
+
+ var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'optumapi@gmail.com',
+    pass: 'Optum123'
+  }
+});
+
+///////////
+
+var mailOptions = {
+  from: 'mike793@gmail.com',
+  to: 'mike.liadov@optum.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+
 
  // view engine setup
  app.set('views', path.join(__dirname, 'views'))
@@ -44,6 +71,7 @@ const CosmosClient = require('@azure/cosmos').CosmosClient
 
  app.get('/', (req, res, next) => taskList.showTasks(req, res).catch(next))
  app.post('/addtask', (req, res, next) => taskList.addTask(req, res).catch(next))
+ 
  app.post('/completetask', (req, res, next) =>
    taskList.completeTask(req, res).catch(next)
  )
